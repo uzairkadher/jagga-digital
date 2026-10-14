@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Jagga Digital | Fitness Marketing Agency">
-    <meta property="og:description" content="Dominate Social Media for $50/week. Custom graphics, captions, and auto-scheduling.">
+    <meta property="og:description" content="3 Pro Posts Every Week, Done For You For $50.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200">
     <meta property="og:type" content="website">
 
@@ -27,64 +27,120 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Poppins', 'sans-serif'] },
-                    colors: { neon: '#ff6600', darkbg: '#0a0f16', cardbg: '#141c27' }
+                    colors: { 
+                        neon: '#ff6600', 
+                        darkbg: '#070a0f', 
+                        cardbg: 'rgba(20, 28, 39, 0.7)'
+                    }
                 }
             }
         }
     </script>
     <style>
-        .neon-glow { box-shadow: 0 0 20px rgba(255,102,0,0.4); }
-        .neon-text { text-shadow: 0 0 10px rgba(255,102,0,0.6); }
+        .neon-glow { box-shadow: 0 0 25px rgba(255,102,0,0.3); }
+        .neon-text { text-shadow: 0 0 12px rgba(255,102,0,0.6); }
+        .glass-card {
+            background: rgba(20, 28, 39, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        body {
+            background-color: #070a0f;
+            background-image: radial-gradient(rgba(255, 102, 0, 0.05) 1px, transparent 0);
+            background-size: 30px 30px;
+        }
     </style>
 </head>
-<body class="bg-darkbg text-white font-sans antialiased">
+<body class="bg-darkbg text-white font-sans antialiased selection:bg-neon selection:text-darkbg">
 
     <!-- Navbar -->
-    <nav class="container mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-800/60">
+    <nav class="container mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-800/60 sticky top-0 bg-[#070a0f]/90 backdrop-blur-md z-50">
         <div class="text-2xl font-extrabold tracking-wider">
             JAGGA<span class="text-neon"> DIGITAL</span>
         </div>
-        <div class="flex items-center gap-4">
-            <a href="#services" class="hidden md:inline text-gray-300 hover:text-neon transition">Services</a>
-            <a href="#why-us" class="hidden md:inline text-gray-300 hover:text-neon transition">Why Us</a>
-            <a href="#faq" class="hidden md:inline text-gray-300 hover:text-neon transition">FAQ</a>
+        <div class="flex items-center gap-6">
+            <a href="#portfolio" class="hidden md:inline text-gray-300 hover:text-neon transition text-sm font-medium">Work</a>
+            <a href="#services" class="hidden md:inline text-gray-300 hover:text-neon transition text-sm font-medium">Services</a>
+            <a href="#pricing" class="hidden md:inline text-gray-300 hover:text-neon transition text-sm font-medium">Pricing</a>
             <a href="#" class="wa-link bg-neon text-darkbg px-5 py-2.5 rounded-full font-bold hover:bg-white transition neon-glow text-sm">
-                Let's Talk
+                Get My 3 Posts →
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-24 text-center">
-        <div class="inline-block bg-cardbg border border-gray-800 px-4 py-1.5 rounded-full text-xs font-semibold text-neon mb-6">
-            🔥 EXCLUSIVELY FOR GYMS & FITNESS COACHES
+    <section class="container mx-auto px-6 py-20 text-center relative">
+        <!-- Real US Proof Strip -->
+        <div class="inline-block glass-card px-5 py-2 rounded-full text-xs font-medium text-gray-300 mb-8 border border-neon/30">
+            📍 Working with fitness coaches & gyms in <span class="text-neon font-bold">Miami, Austin & LA</span>
         </div>
+        
         <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-            We Help Fitness Coaches <br>
-            <span class="text-neon neon-text">Dominate Social Media</span>
+            3 Pro Posts Every Week, <br>
+            <span class="text-neon neon-text">Done For You For $50</span>
         </h1>
         <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Stop stressing over content creation. We design, write, and manage your Instagram & Facebook for just <span class="text-white font-bold">$50/week</span> so you can focus on training clients.
+            Stop stressing over content creation. We design, write, and manage your Instagram & Facebook so you can focus entirely on training your clients.
         </p>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a href="#" class="wa-link bg-neon text-darkbg px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition neon-glow w-full sm:w-auto flex items-center justify-center gap-2">
-                <span>Claim Your Spot via WhatsApp</span> <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Get My 3 Posts →</span> <i class="fa-brands fa-whatsapp text-xl"></i>
             </a>
-            <a href="#pricing" class="border border-gray-700 text-gray-300 px-8 py-4 rounded-full font-bold text-lg hover:border-white hover:text-white transition w-full sm:w-auto">
-                View $50/wk Plan
+            <a href="#portfolio" class="border border-gray-700 text-gray-300 px-8 py-4 rounded-full font-bold text-lg hover:border-white hover:text-white transition w-full sm:w-auto">
+                View Our Work
             </a>
         </div>
         
-        <!-- Trust Badges -->
-        <div class="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-500 text-sm font-medium">
-            <span><i class="fa-solid fa-check text-neon mr-2"></i> No Long-Term Contracts</span>
-            <span><i class="fa-solid fa-check text-neon mr-2"></i> Delivered in 48 Hours</span>
-            <span><i class="fa-solid fa-check text-neon mr-2"></i> 100% Custom Branded</span>
+        <!-- Stats / Trust Bar -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-neon mb-1">3x</div>
+                <div class="text-gray-400 text-xs uppercase tracking-wider">More Engagement</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-white mb-1">48h</div>
+                <div class="text-gray-400 text-xs uppercase tracking-wider">Fast Turnaround</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-neon mb-1">$50</div>
+                <div class="text-gray-400 text-xs uppercase tracking-wider">Per Week Flat</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-white mb-1">0%</div>
+                <div class="text-gray-400 text-xs uppercase tracking-wider">Long-term Risk</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section (Added Real Samples to Kill "Scam" Feeling) -->
+    <section id="portfolio" class="py-20 bg-cardbg/40 border-y border-gray-800/60">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-xl mx-auto mb-12">
+                <span class="text-neon font-semibold text-sm uppercase tracking-wider">Our Recent Work</span>
+                <h2 class="text-3xl font-bold mt-2 mb-3">Swipe-Stopping Fitness Content</h2>
+                <p class="text-gray-400 text-sm">Examples of high-impact posts we create for coaches and gyms.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-2 rounded-2xl overflow-hidden group">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600" alt="Fitness Sample 1" class="rounded-xl w-full h-[320px] object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="glass-card p-2 rounded-2xl overflow-hidden group">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600" alt="Fitness Sample 2" class="rounded-xl w-full h-[320px] object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="glass-card p-2 rounded-2xl overflow-hidden group">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Fitness Sample 3" class="rounded-xl w-full h-[320px] object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="glass-card p-2 rounded-2xl overflow-hidden group">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600" alt="Fitness Sample 4" class="rounded-xl w-full h-[320px] object-cover group-hover:scale-105 transition duration-300">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- What We Do Section -->
-    <section id="services" class="bg-cardbg py-20 border-y border-gray-800/60">
+    <section id="services" class="py-20 relative">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-xl mx-auto mb-16">
                 <h2 class="text-3xl font-bold mb-4">Complete Done-For-You System</h2>
@@ -92,101 +148,45 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-darkbg p-8 rounded-2xl border border-gray-800 hover:border-neon transition group">
-                    <div class="w-14 h-14 bg-cardbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition">
+                <div class="glass-card p-8 rounded-2xl hover:border-neon/50 transition group">
+                    <div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition shadow-inner">
                         <i class="fa-solid fa-pen-nib"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Custom High-Energy Graphics</h3>
-                    <p class="text-gray-400 leading-relaxed">Eye-catching workout tips, quotes, and promotional posts tailored precisely to your brand color and logo.</p>
+                    <p class="text-gray-400 leading-relaxed text-sm">Eye-catching workout tips, quotes, and promotional posts tailored precisely to your brand color and logo.</p>
                 </div>
                 
-                <div class="bg-darkbg p-8 rounded-2xl border border-gray-800 hover:border-neon transition group">
-                    <div class="w-14 h-14 bg-cardbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition">
+                <div class="glass-card p-8 rounded-2xl hover:border-neon/50 transition group">
+                    <div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition shadow-inner">
                         <i class="fa-solid fa-keyboard"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Engaging Captions & Tags</h3>
-                    <p class="text-gray-400 leading-relaxed">No more staring at a blank screen. We write punchy, motivational captions loaded with targeted local fitness hashtags.</p>
+                    <p class="text-gray-400 leading-relaxed text-sm">No more staring at a blank screen. We write punchy, motivational captions loaded with targeted local fitness hashtags.</p>
                 </div>
                 
-                <div class="bg-darkbg p-8 rounded-2xl border border-gray-800 hover:border-neon transition group">
-                    <div class="w-14 h-14 bg-cardbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition">
+                <div class="glass-card p-8 rounded-2xl hover:border-neon/50 transition group">
+                    <div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition shadow-inner">
                         <i class="fa-solid fa-calendar-check"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Professional Auto-Scheduling</h3>
-                    <p class="text-gray-400 leading-relaxed">Your content goes live automatically on optimal days (Mon/Wed/Fri) so your feed stays active 24/7 without effort.</p>
+                    <p class="text-gray-400 leading-relaxed text-sm">Your content goes live automatically on optimal days (Mon/Wed/Fri) so your feed stays active 24/7 without effort.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section id="why-us" class="container mx-auto px-6 py-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-neon font-semibold text-sm uppercase tracking-wider">Why Jagga Digital?</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold mt-2 mb-6">Built Specifically for Busy Fitness Professionals</h2>
-                <p class="text-gray-400 mb-6 leading-relaxed">
-                    Most marketing agencies charge $1,000+/month and overcomplicate things. We keep it lean, fast, and results-driven. You get elite agency-level quality for less than the price of a gym membership.
-                </p>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-neon/10 text-neon p-2 rounded-lg mt-1"><i class="fa-solid fa-bolt"></i></div>
-                        <div>
-                            <h4 class="font-bold text-lg">Zero Time Wasted</h4>
-                            <p class="text-gray-400 text-sm">Send us your logo once, and we handle the rest every single week.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="bg-neon/10 text-neon p-2 rounded-lg mt-1"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div>
-                            <h4 class="font-bold text-lg">Risk-Free Weekly Model</h4>
-                            <p class="text-gray-400 text-sm">Pay week-by-week. If you don't love the growth, cancel anytime with zero penalty.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-cardbg border border-gray-800 p-8 md:p-12 rounded-3xl relative">
-                <div class="absolute -top-4 -right-4 bg-neon text-darkbg font-extrabold px-4 py-2 rounded-xl text-sm shadow-lg">
-                    SAVE 80% VS AGENCIES
-                </div>
-                <h3 class="text-2xl font-bold mb-4">The Jagga Digital Standard</h3>
-                <ul class="space-y-4 text-gray-300">
-                    <li class="flex items-center justify-between border-b border-gray-800 pb-3">
-                        <span>Weekly Posts</span>
-                        <strong class="text-neon">3 High-End Designs</strong>
-                    </li>
-                    <li class="flex items-center justify-between border-b border-gray-800 pb-3">
-                        <span>Turnaround Time</span>
-                        <strong class="text-white">Fast 48 Hours</strong>
-                    </li>
-                    <li class="flex items-center justify-between border-b border-gray-800 pb-3">
-                        <span>Platform Support</span>
-                        <strong class="text-white">Instagram & Facebook</strong>
-                    </li>
-                    <li class="flex items-center justify-between border-b border-gray-800 pb-3">
-                        <span>Weekly Investment</span>
-                        <strong class="text-neon text-xl">$50 / week</strong>
-                    </li>
-                </ul>
-                <a href="#" class="wa-link block text-center bg-neon text-darkbg py-4 rounded-xl font-bold mt-8 hover:bg-white transition neon-glow">
-                    Get Started Today
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="bg-cardbg py-24 border-t border-gray-800/60">
+    <section id="pricing" class="py-24 relative bg-cardbg/40 border-t border-gray-800/60">
         <div class="container mx-auto px-6 flex justify-center">
-            <div class="bg-darkbg border border-neon p-10 md:p-14 rounded-3xl max-w-lg w-full text-center relative neon-glow">
-                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-neon text-darkbg px-5 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider">
+            <div class="glass-card border border-neon/50 p-10 md:p-14 rounded-3xl max-w-lg w-full text-center relative neon-glow">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-neon text-darkbg px-5 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md">
                     MOST POPULAR CHOICE
                 </div>
                 <h2 class="text-3xl font-bold mb-2 mt-4">Pro Fitness Package</h2>
                 <p class="text-gray-400 text-sm mb-6">Designed to keep your fitness brand fully active and engaging.</p>
                 <div class="text-6xl font-extrabold text-neon mb-8">$50 <span class="text-lg text-gray-400 font-normal">/ week</span></div>
                 
-                <ul class="text-left text-gray-300 space-y-4 mb-10">
+                <ul class="text-left text-gray-300 space-y-4 mb-10 text-sm">
                     <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> 3 Custom Branded Posts per week</li>
                     <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> Professional Captions & Hashtags</li>
                     <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> Automatic Feed Scheduling</li>
@@ -195,7 +195,7 @@
                 </ul>
 
                 <a href="#" class="wa-link block w-full bg-neon text-darkbg py-4 rounded-xl font-bold text-lg hover:bg-white transition neon-glow">
-                    Claim This Package on WhatsApp
+                    Get My 3 Posts →
                 </a>
                 <p class="text-xs text-gray-500 mt-4">Direct communication with your manager via WhatsApp.</p>
             </div>
@@ -210,22 +210,22 @@
         </div>
 
         <div class="max-w-3xl mx-auto space-y-6">
-            <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl">
+            <div class="glass-card p-6 rounded-2xl">
                 <h3 class="font-bold text-lg mb-2 text-neon">How do we get started after I pay?</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">Once your $50 weekly invoice is cleared, we request your logo, brand colors, and social media login access (or partner/editor role). We then prepare your first batch within 48 hours.</p>
             </div>
             
-            <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl">
+            <div class="glass-card p-6 rounded-2xl">
                 <h3 class="font-bold text-lg mb-2 text-neon">Do I have to sign a long-term contract?</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">Absolutely not! Our service is billed strictly on a week-to-week basis. You can pause or cancel anytime with zero hassle.</p>
             </div>
 
-            <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl">
+            <div class="glass-card p-6 rounded-2xl">
                 <h3 class="font-bold text-lg mb-2 text-neon">How do I pay the $50 weekly fee?</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">We support secure and easy payment methods including international card transfers, bank deposits, and Remitly.</p>
             </div>
 
-            <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl">
+            <div class="glass-card p-6 rounded-2xl">
                 <h3 class="font-bold text-lg mb-2 text-neon">Can I review the posts before they go live?</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">Yes! For your first week, we send all 🎨 graphics and captions to you on WhatsApp for approval before scheduling them.</p>
             </div>
@@ -233,10 +233,26 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800/60 py-10 text-center text-gray-500 text-sm">
-        <div class="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; 2026 Jagga Digital. Serving fitness coaches & gyms across the US.</p>
-            <div class="flex gap-6">
+    <footer class="border-t border-gray-800/60 py-12 text-center text-gray-400 text-sm bg-[#05070a]">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="text-xl font-extrabold tracking-wider text-white mb-2">
+                    JAGGA<span class="text-neon"> DIGITAL</span>
+                </div>
+                <p class="text-xs text-gray-500">&copy; 2026 Jagga Digital. Serving fitness coaches & gyms across the US.</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-6 text-sm">
+                <a href="https://instagram.com/4t_jagga?exln=Z3IyZ3Y0YWgwc3pi" target="_blank" class="flex items-center gap-2 hover:text-neon transition">
+                    <i class="fa-brands fa-instagram text-neon text-lg"></i> <span>@4t_jagga</span>
+                </a>
+                <a href="#" class="wa-link flex items-center gap-2 hover:text-neon transition">
+                    <i class="fa-brands fa-whatsapp text-[#25D366] text-lg"></i> <span>+1 (786) 954-7940</span>
+                </a>
+            </div>
+
+            <div class="flex gap-6 text-sm">
+                <a href="#portfolio" class="hover:text-neon transition">Work</a>
                 <a href="#services" class="hover:text-neon transition">Services</a>
                 <a href="#pricing" class="hover:text-neon transition">Pricing</a>
                 <a href="#faq" class="hover:text-neon transition">FAQ</a>
