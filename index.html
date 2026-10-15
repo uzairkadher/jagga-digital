@@ -1,448 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jagga Digital helps fitness coaches and gyms grow with $50/week high-converting social media management.">
-    <title>Jagga Digital | Elite Social Media for Fitness Coaches</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="https://i.imgur.com/8Km9tLL.png" type="image/png">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Jagga Digital | Fitness Marketing Agency">
-    <meta property="og:description" content="3 Pro Posts Every Week, Done For You For $50.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200">
-    <meta property="og:type" content="website">
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
-                    colors: { 
-                        neon: '#ff6600', 
-                        darkbg: '#070a0f', 
-                        cardbg: 'rgba(20, 28, 39, 0.7)'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .neon-glow { box-shadow: 0 0 25px rgba(255,102,0,0.3); }
-        .neon-text { text-shadow: 0 0 12px rgba(255,102,0,0.6); }
-        .glass-card {
-            background: rgba(20, 28, 39, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        body {
-            background-color: #070a0f;
-            background-image: radial-gradient(rgba(255, 102, 0, 0.05) 1px, transparent 0);
-            background-size: 30px 30px;
-            overflow-x: hidden;
-        }
-
-        /* Effect 4 - Spotlight Mouse */
-        #spotlight {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,102,0,0.06) 0%, rgba(0,0,0,0) 70%);
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 99;
-            mix-blend-mode: screen;
-            transition: width 0.3s, height 0.3s;
-        }
-        @media (max-width: 768px) {
-            #spotlight { display: none; }
-        }
-
-        /* Effect 5 - Scroll Reveal Base Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Effect 2 - 3D Tilt Card Base */
-        .tilt-card {
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            will-change: transform;
-        }
-        .tilt-card img {
-            transform: translateZ(20px);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jagga Digital helps fitness coaches and gyms grow with $50/week high-converting social media management.">
+<title>Jagga Digital | Elite Social Media for Fitness Coaches</title>
+<link rel="icon" href="https://i.imgur.com/8Km9tLL.png" type="image/png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Poppins','sans-serif']},colors:{neon:'#ff6600',darkbg:'#070a0f',cardbg:'rgba(20, 28, 39, 0.7)'}}}}</script>
+<style>
+.neon-glow{box-shadow:0 0 25px rgba(255,102,0,0.3)}.neon-text{text-shadow:0 0 12px rgba(255,102,0,0.6)}.glass-card{background:rgba(20,28,39,0.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08)}body{background-color:#070a0f;background-image:radial-gradient(rgba(255,102,0,0.05) 1px,transparent 0);background-size:30px 30px;overflow-x:hidden}#spotlight{position:fixed;top:0;left:0;width:600px;height:600px;background:radial-gradient(circle,rgba(255,102,0,0.06) 0%,rgba(0,0,0,0) 70%);transform:translate(-50%,-50%);pointer-events:none;z-index:99;mix-blend-mode:screen}@media(max-width:768px){#spotlight{display:none}}.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s,transform 0.8s}.reveal.active{opacity:1;transform:translateY(0)}.tilt-card{transform-style:preserve-3d;perspective:1000px}
+</style>
 </head>
-<body class="bg-darkbg text-white font-sans antialiased selection:bg-neon selection:text-darkbg">
-
-    <!-- Effect 4: Spotlight Element -->
-    <div id="spotlight"></div>
-
-    <!-- Navbar (Bug Fixed: Removed 'reveal' so it loads instantly) -->
-    <nav class="container mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-800/60 sticky top-0 bg-[#070a0f]/90 backdrop-blur-md z-50">
-        <div class="text-2xl font-extrabold tracking-wider">
-            JAGGA<span class="text-neon"> DIGITAL</span>
-        </div>
-        <div class="flex items-center gap-6">
-            <a href="#portfolio" class="hidden md:inline text-gray-300 hover:text-neon transition text-sm font-medium">Work</a>
-            <a href="#services" class="hidden md:inline text-gray-300 hover:text-neon transition text-sm font-medium">Services</a>
-            <a href="#pricing" class="hidden md:inline text-gray-300 hover:text-neon transition text-sm font-medium">Pricing</a>
-            <a href="#" class="wa-link bg-neon text-darkbg px-5 py-2.5 rounded-full font-bold hover:bg-white transition neon-glow text-sm inline-block">
-                Get My 3 Posts →
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-20 text-center relative reveal">
-        <!-- Real US Proof Strip -->
-        <div class="inline-block glass-card px-5 py-2 rounded-full text-xs font-medium text-gray-300 mb-8 border border-neon/30">
-            📍 Working with fitness coaches & gyms in <span class="text-neon font-bold">Miami, Austin & LA</span>
-        </div>
-        
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-            3 Pro Posts Every Week, <br>
-            <span class="text-neon neon-text">Done For You For $50</span>
-        </h1>
-        <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Stop stressing over content creation. We design, write, and manage your Instagram & Facebook so you can focus entirely on training your clients.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="#" class="wa-link bg-neon text-darkbg px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition neon-glow w-full sm:w-auto flex items-center justify-center gap-2 inline-block">
-                <span>Get My 3 Posts →</span> <i class="fa-brands fa-whatsapp text-xl"></i>
-            </a>
-            <a href="#portfolio" class="border border-gray-700 text-gray-300 px-8 py-4 rounded-full font-bold text-lg hover:border-white hover:text-white transition w-full sm:w-auto inline-block">
-                View Our Work
-            </a>
-        </div>
-        
-        <!-- Stats / Trust Bar -->
-        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div class="glass-card p-6 rounded-2xl text-center reveal">
-                <div class="text-3xl md:text-4xl font-extrabold text-neon mb-1">3x</div>
-                <div class="text-gray-400 text-xs uppercase tracking-wider">More Engagement</div>
-            </div>
-            <div class="glass-card p-6 rounded-2xl text-center reveal">
-                <div class="text-3xl md:text-4xl font-extrabold text-white mb-1">48h</div>
-                <div class="text-gray-400 text-xs uppercase tracking-wider">Fast Turnaround</div>
-            </div>
-            <div class="glass-card p-6 rounded-2xl text-center reveal">
-                <div class="text-3xl md:text-4xl font-extrabold text-neon mb-1">$50</div>
-                <div class="text-gray-400 text-xs uppercase tracking-wider">Per Week Flat</div>
-            </div>
-            <div class="glass-card p-6 rounded-2xl text-center reveal">
-                <div class="text-3xl md:text-4xl font-extrabold text-white mb-1">0%</div>
-                <div class="text-gray-400 text-xs uppercase tracking-wider">Long-term Risk</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section (Effect 2: 3D Tilt) -->
-    <section id="portfolio" class="py-20 bg-cardbg/40 border-y border-gray-800/60 reveal">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-xl mx-auto mb-12">
-                <span class="text-neon font-semibold text-sm uppercase tracking-wider">Our Recent Work</span>
-                <h2 class="text-3xl font-bold mt-2 mb-3">Swipe-Stopping Fitness Content</h2>
-                <p class="text-gray-400 text-sm">Examples of high-impact posts we create for coaches and gyms.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card p-2 rounded-2xl overflow-hidden group tilt-card reveal">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600" alt="Fitness Sample 1" class="rounded-xl w-full h-[320px] object-cover transition duration-300">
-                </div>
-                <div class="glass-card p-2 rounded-2xl overflow-hidden group tilt-card reveal">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600" alt="Fitness Sample 2" class="rounded-xl w-full h-[320px] object-cover transition duration-300">
-                </div>
-                <div class="glass-card p-2 rounded-2xl overflow-hidden group tilt-card reveal">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Fitness Sample 3" class="rounded-xl w-full h-[320px] object-cover transition duration-300">
-                </div>
-                <div class="glass-card p-2 rounded-2xl overflow-hidden group tilt-card reveal">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600" alt="Fitness Sample 4" class="rounded-xl w-full h-[320px] object-cover transition duration-300">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What We Do Section -->
-    <section id="services" class="py-20 relative reveal">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold mb-4">Complete Done-For-You System</h2>
-                <p class="text-gray-400">Everything you need to keep your profile active, professional, and converting.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl hover:border-neon/50 transition group reveal">
-                    <div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition shadow-inner">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Custom High-Energy Graphics</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Eye-catching workout tips, quotes, and promotional posts tailored precisely to your brand color and logo.</p>
-                </div>
-                
-                <div class="glass-card p-8 rounded-2xl hover:border-neon/50 transition group reveal">
-                    <div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition shadow-inner">
-                        <i class="fa-solid fa-keyboard"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Engaging Captions & Tags</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">No more staring at a blank screen. We write punchy, motivational captions loaded with targeted local fitness hashtags.</p>
-                </div>
-                
-                <div class="glass-card p-8 rounded-2xl hover:border-neon/50 transition group reveal">
-                    <div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6 group-hover:bg-neon group-hover:text-darkbg transition shadow-inner">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Professional Auto-Scheduling</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Your content goes live automatically on optimal days (Mon/Wed/Fri) so your feed stays active 24/7 without effort.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section (Effect 6: Whoosh Audio on Hover - Bug Fixed: resets on mouseleave) -->
-    <section id="pricing" class="py-24 relative bg-cardbg/40 border-t border-gray-800/60 reveal">
-        <div class="container mx-auto px-6 flex justify-center">
-            <div id="pricing-card" class="glass-card border border-neon/50 p-10 md:p-14 rounded-3xl max-w-lg w-full text-center relative neon-glow">
-                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-neon text-darkbg px-5 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md">
-                    MOST POPULAR CHOICE
-                </div>
-                <h2 class="text-3xl font-bold mb-2 mt-4">Pro Fitness Package</h2>
-                <p class="text-gray-400 text-sm mb-6">Designed to keep your fitness brand fully active and engaging.</p>
-                <div class="text-6xl font-extrabold text-neon mb-8">$50 <span class="text-lg text-gray-400 font-normal">/ week</span></div>
-                
-                <ul class="text-left text-gray-300 space-y-4 mb-10 text-sm">
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> 3 Custom Branded Posts per week</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> Professional Captions & Hashtags</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> Automatic Feed Scheduling</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> Easy Secure Payments (Card/Bank/Remitly)</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-neon"></i> Cancel Anytime, No Contracts</li>
-                </ul>
-
-                <a href="#" class="wa-link block w-full bg-neon text-darkbg py-4 rounded-xl font-bold text-lg hover:bg-white transition neon-glow inline-block">
-                    Get My 3 Posts →
-                </a>
-                <p class="text-xs text-gray-500 mt-4">Direct communication with your manager via WhatsApp.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="container mx-auto px-6 py-24 reveal">
-        <div class="text-center max-w-xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p class="text-gray-400">Got questions? We've got straightforward answers.</p>
-        </div>
-
-        <div class="max-w-3xl mx-auto space-y-6">
-            <div class="glass-card p-6 rounded-2xl reveal">
-                <h3 class="font-bold text-lg mb-2 text-neon">How do we get started after I pay?</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Once your $50 weekly invoice is cleared, we request your logo, brand colors, and social media login access (or partner/editor role). We then prepare your first batch within 48 hours.</p>
-            </div>
-            
-            <div class="glass-card p-6 rounded-2xl reveal">
-                <h3 class="font-bold text-lg mb-2 text-neon">Do I have to sign a long-term contract?</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Absolutely not! Our service is billed strictly on a week-to-week basis. You can pause or cancel anytime with zero hassle.</p>
-            </div>
-
-            <div class="glass-card p-6 rounded-2xl reveal">
-                <h3 class="font-bold text-lg mb-2 text-neon">How do I pay the $50 weekly fee?</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">We support secure and easy payment methods including international card transfers, bank deposits, and Remitly.</p>
-            </div>
-
-            <div class="glass-card p-6 rounded-2xl reveal">
-                <h3 class="font-bold text-lg mb-2 text-neon">Can I review the posts before they go live?</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Yes! For your first week, we send all 🎨 graphics and captions to you on WhatsApp for approval before scheduling them.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-800/60 py-12 text-center text-gray-400 text-sm bg-[#05070a] reveal">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <div class="text-xl font-extrabold tracking-wider text-white mb-2">
-                    JAGGA<span class="text-neon"> DIGITAL</span>
-                </div>
-                <p class="text-xs text-gray-500">&copy; 2026 Jagga Digital. Serving fitness coaches & gyms across the US.</p>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row items-center gap-6 text-sm">
-                <a href="https://instagram.com/4t_jagga?exln=Z3IyZ3Y0YWgwc3pi" target="_blank" class="flex items-center gap-2 hover:text-neon transition">
-                    <i class="fa-brands fa-instagram text-neon text-lg"></i> <span>@4t_jagga</span>
-                </a>
-                <a href="#" class="wa-link flex items-center gap-2 hover:text-neon transition">
-                    <i class="fa-brands fa-whatsapp text-[#25D366] text-lg"></i> <span>+1 (786) 954-7940</span>
-                </a>
-            </div>
-
-            <div class="flex gap-6 text-sm">
-                <a href="#portfolio" class="hover:text-neon transition">Work</a>
-                <a href="#services" class="hover:text-neon transition">Services</a>
-                <a href="#pricing" class="hover:text-neon transition">Pricing</a>
-                <a href="#faq" class="hover:text-neon transition">FAQ</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="#" class="wa-link fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center z-50 neon-glow inline-block">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- All JavaScript Enhancements (Effects 1, 2, 4, 5, 6 - Bugs Fixed) -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // WhatsApp Link Ingestion
-            const waNumber = "17869547940";
-            const waMessage = encodeURIComponent("Hi Jagga Digital! I'm a fitness coach/gym owner and I want to start the $50/week social media package.");
-            const waUrl = `https://wa.me/${waNumber}?text=${waMessage}`;
-            
-            document.querySelectorAll('.wa-link').forEach(link => {
-                link.href = waUrl;
-                link.target = "_blank";
-            });
-
-            // Check if mobile device for disabling heavy mouse effects (<768px)
-            const isMobile = window.innerWidth < 768;
-
-            // Effect 1: Magnetic CTA Buttons
-            if (!isMobile) {
-                const magneticButtons = document.querySelectorAll('.wa-link');
-                magneticButtons.forEach(btn => {
-                    btn.addEventListener('mousemove', (e) => {
-                        const rect = btn.getBoundingClientRect();
-                        const x = e.clientX - rect.left - rect.width / 2;
-                        const y = e.clientY - rect.top - rect.height / 2;
-                        btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
-                        btn.style.transition = 'transform 0.1s ease-out';
-                    });
-                    btn.addEventListener('mouseleave', () => {
-                        btn.style.transform = 'translate(0px, 0px)';
-                        btn.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                    });
-                });
-            }
-
-            // Effect 2: 3D Tilt on Portfolio Cards
-            if (!isMobile) {
-                const tiltCards = document.querySelectorAll('.tilt-card');
-                tiltCards.forEach(card => {
-                    card.addEventListener('mousemove', (e) => {
-                        const rect = card.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        const centerX = rect.width / 2;
-                        const centerY = rect.height / 2;
-                        const rotateX = -((y - centerY) / centerY) * 8;
-                        const rotateY = ((x - centerX) / centerX) * 8;
-                        
-                        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                        card.style.transition = 'transform 0.1s ease-out';
-                    });
-                    card.addEventListener('mouseleave', () => {
-                        card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-                        card.style.transition = 'transform 0.5s ease-out';
-                    });
-                });
-            }
-
-            // Effect 4: Spotlight Mouse Following
-            if (!isMobile) {
-                const spotlight = document.getElementById('spotlight');
-                window.addEventListener('mousemove', (e) => {
-                    spotlight.style.left = e.clientX + 'px';
-                    spotlight.style.top = e.clientY + 'px';
-                });
-            }
-
-            // Effect 5: Smooth Scroll + Reveal (IntersectionObserver)
-            const revealElements = document.querySelectorAll('.reveal');
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('active');
-                        }, index * 50); // Stagger effect
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            revealElements.forEach(el => {
-                revealObserver.observe(el);
-            });
-
-            // Effect 6: Ultra Soft Whoosh Sound on Pricing Card Hover (Bug Fixed: resets on mouseleave)
-            let audioCtx = null;
-            let hasPlayedWhoosh = false;
-
-            function playWhoosh() {
-                if (hasPlayedWhoosh) return;
-                try {
-                    if (!audioCtx) {
-                        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                    }
-                    if (audioCtx.state === 'suspended') {
-                        audioCtx.resume();
-                    }
-
-                    const bufferSize = audioCtx.sampleRate * 0.15; // 150ms
-                    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-                    const data = buffer.getChannelData(0);
-                    for (let i = 0; i < bufferSize; i++) {
-                        data[i] = Math.random() * 2 - 1;
-                    }
-
-                    const noise = audioCtx.createBufferSource();
-                    noise.buffer = buffer;
-
-                    const filter = audioCtx.createBiquadFilter();
-                    filter.type = 'bandpass';
-                    filter.frequency.setValueAtTime(400, audioCtx.currentTime);
-                    filter.Q.setValueAtTime(1, audioCtx.currentTime);
-
-                    const gain = audioCtx.createGain();
-                    gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-                    gain.gain.exponentialRampToValueAtTime(0.05, audioCtx.currentTime + 0.05);
-                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
-
-                    noise.connect(filter);
-                    filter.connect(gain);
-                    gain.connect(audioCtx.destination);
-
-                    noise.start();
-                    hasPlayedWhoosh = true;
-                } catch(e) {}
-            }
-
-            const pricingCard = document.getElementById('pricing-card');
-            if (pricingCard) {
-                pricingCard.addEventListener('mouseenter', playWhoosh);
-                // Bug Fix: Reset whoosh state when mouse leaves so it can play again on next hover
-                pricingCard.addEventListener('mouseleave', () => {
-                    hasPlayedWhoosh = false;
-                });
-            }
-        });
-    </script>
+<body class="bg-darkbg text-white font-sans antialiased">
+<div id="spotlight"></div>
+<nav class="container mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-800/60 sticky top-0 bg-[#070a0f]/90 backdrop-blur-md z-50">
+<div class="text-2xl font-extrabold tracking-wider">JAGGA<span class="text-neon"> DIGITAL</span></div>
+<div class="flex items-center gap-6"><a href="#portfolio" class="hidden md:inline text-gray-300 hover:text-neon text-sm">Work</a><a href="#services" class="hidden md:inline text-gray-300 hover:text-neon text-sm">Services</a><a href="#pricing" class="hidden md:inline text-gray-300 hover:text-neon text-sm">Pricing</a><a href="#contact" class="hidden md:inline text-gray-300 hover:text-neon text-sm">Contact</a><a href="#" class="wa-link bg-neon text-darkbg px-5 py-2.5 rounded-full font-bold text-sm">Get My 3 Posts →</a></div>
+</nav>
+<section class="container mx-auto px-6 py-20 text-center reveal">
+<div class="inline-block glass-card px-5 py-2 rounded-full text-xs text-gray-300 mb-8 border border-neon/30">📍 Working with fitness coaches & gyms in <span class="text-neon font-bold">Miami, Austin & LA</span></div>
+<h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">3 Pro Posts Every Week,<br><span class="text-neon neon-text">Done For You For $50</span></h1>
+<p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">Stop stressing over content creation. We design, write, and manage your Instagram & Facebook so you can focus on training clients.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4"><a href="#" class="wa-link bg-neon text-darkbg px-8 py-4 rounded-full font-bold text-lg w-full sm:w-auto">Get My 3 Posts → <i class="fa-brands fa-whatsapp"></i></a><a href="#portfolio" class="border border-gray-700 text-gray-300 px-8 py-4 rounded-full font-bold text-lg w-full sm:w-auto">View Our Work</a></div>
+<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"><div class="glass-card p-6 rounded-2xl text-center"><div class="text-3xl font-extrabold text-neon">3x</div><div class="text-gray-400 text-xs">More Engagement</div></div><div class="glass-card p-6 rounded-2xl text-center"><div class="text-3xl font-extrabold">48h</div><div class="text-gray-400 text-xs">Fast Turnaround</div></div><div class="glass-card p-6 rounded-2xl text-center"><div class="text-3xl font-extrabold text-neon">$50</div><div class="text-gray-400 text-xs">Per Week Flat</div></div><div class="glass-card p-6 rounded-2xl text-center"><div class="text-3xl font-extrabold">0%</div><div class="text-gray-400 text-xs">Long-term Risk</div></div></div>
+</section>
+<section id="portfolio" class="py-20 bg-cardbg/40 border-y border-gray-800/60 reveal">
+<div class="container mx-auto px-6 text-center"><div class="max-w-xl mx-auto mb-12"><span class="text-neon font-semibold text-sm uppercase">Our Recent Work - Real Client Designs</span><h2 class="text-3xl font-bold mt-2 mb-3">Swipe-Stopping Fitness Content</h2><p class="text-gray-400 text-sm">Your brand will look this pro - custom designs like these.</p></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-2 rounded-2xl overflow-hidden tilt-card"><img src="work1.jpg" alt="Work 1" class="rounded-xl w-full h-[380px] object-cover"></div>
+<div class="glass-card p-2 rounded-2xl overflow-hidden tilt-card"><img src="work2.jpg" alt="Work 2" class="rounded-xl w-full h-[380px] object-cover"></div>
+<div class="glass-card p-2 rounded-2xl overflow-hidden tilt-card"><img src="work3.jpg" alt="Work 3" class="rounded-xl w-full h-[380px] object-cover"></div>
+<div class="glass-card p-2 rounded-2xl overflow-hidden tilt-card"><img src="work4.jpg" alt="Work 4" class="rounded-xl w-full h-[380px] object-cover"></div>
+</div></div>
+</section>
+<section id="services" class="py-20 reveal"><div class="container mx-auto px-6"><div class="text-center max-w-xl mx-auto mb-16"><h2 class="text-3xl font-bold mb-4">Complete Done-For-You System</h2><p class="text-gray-400">Everything you need to keep your profile active and converting.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="glass-card p-8 rounded-2xl"><div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6"><i class="fa-solid fa-pen-nib"></i></div><h3 class="text-xl font-bold mb-3">Custom High-Energy Graphics</h3><p class="text-gray-400 text-sm">Eye-catching posts tailored to your brand.</p></div><div class="glass-card p-8 rounded-2xl"><div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6"><i class="fa-solid fa-keyboard"></i></div><h3 class="text-xl font-bold mb-3">Engaging Captions & Tags</h3><p class="text-gray-400 text-sm">Punchy captions with local fitness hashtags.</p></div><div class="glass-card p-8 rounded-2xl"><div class="w-14 h-14 bg-darkbg rounded-xl flex items-center justify-center text-neon text-2xl mb-6"><i class="fa-solid fa-calendar-check"></i></div><h3 class="text-xl font-bold mb-3">Auto-Scheduling</h3><p class="text-gray-400 text-sm">Mon/Wed/Fri automatic posting.</p></div></div></div></section>
+<section id="pricing" class="py-24 bg-cardbg/40 border-t border-gray-800/60 reveal"><div class="container mx-auto px-6 flex justify-center"><div class="glass-card border border-neon/50 p-10 rounded-3xl max-w-lg w-full text-center neon-glow"><div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neon text-darkbg px-5 py-1.5 rounded-full font-bold text-xs">MOST POPULAR</div><h2 class="text-3xl font-bold mb-2 mt-4">Pro Fitness Package</h2><p class="text-gray-400 text-sm mb-6">Designed to keep your fitness brand fully active.</p><div class="text-6xl font-extrabold text-neon mb-8">$50 <span class="text-lg text-gray-400 font-normal">/ week</span></div><ul class="text-left text-gray-300 space-y-4 mb-10 text-sm"><li><i class="fa-solid fa-check text-neon"></i> 3 Custom Branded Posts per week</li><li><i class="fa-solid fa-check text-neon"></i> Professional Captions & Hashtags</li><li><i class="fa-solid fa-check text-neon"></i> Automatic Scheduling</li><li><i class="fa-solid fa-check text-neon"></i> Cancel Anytime</li></ul><a href="#" class="wa-link block w-full bg-neon text-darkbg py-4 rounded-xl font-bold text-lg">Get My 3 Posts →</a></div></div></section>
+<section id="faq" class="container mx-auto px-6 py-24 reveal"><div class="text-center max-w-xl mx-auto mb-16"><h2 class="text-3xl font-bold mb-4">FAQ</h2><p class="text-gray-400">Straightforward answers.</p></div><div class="max-w-3xl mx-auto space-y-6"><div class="glass-card p-6 rounded-2xl"><h3 class="font-bold text-neon">How do we get started after I pay?</h3><p class="text-gray-400 text-sm">We request logo, brand colors, and access. First batch in 48h.</p></div><div class="glass-card p-6 rounded-2xl"><h3 class="font-bold text-neon">Do I have to sign a long-term contract?</h3><p class="text-gray-400 text-sm">No. Week-to-week. Pause or cancel anytime.</p></div><div class="glass-card p-6 rounded-2xl"><h3 class="font-bold text-neon">Can I review the posts before they go live?</h3><p class="text-gray-400 text-sm">Yes! First week we send all graphics on WhatsApp for approval.</p></div></div></section>
+<section id="contact" class="container mx-auto px-6 py-24 reveal"><div class="text-center max-w-xl mx-auto mb-12"><h2 class="text-3xl font-bold mb-4">Contact Us</h2><p class="text-gray-400">Have questions? Reach out directly - we reply fast.</p></div><div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"><a href="mailto:jaggadigitalagency@gmail.com" class="glass-card p-6 rounded-2xl flex items-center gap-4"><div class="w-12 h-12 bg-darkbg rounded-xl flex items-center justify-center text-neon text-xl"><i class="fa-solid fa-envelope"></i></div><div class="text-left"><div class="font-bold">Email Us</div><div class="text-gray-400 text-sm">jaggadigitalagency@gmail.com</div></div></a><a href="https://instagram.com/jagga_digital?vrfl=MWN1aHFod2g5bThtag%3D%3D" target="_blank" class="glass-card p-6 rounded-2xl flex items-center gap-4"><div class="w-12 h-12 bg-darkbg rounded-xl flex items-center justify-center text-neon text-xl"><i class="fa-brands fa-instagram"></i></div><div class="text-left"><div class="font-bold">Instagram</div><div class="text-gray-400 text-sm">@jagga_digital</div></div></a></div></section>
+<footer class="border-t border-gray-800/60 py-12 text-center text-gray-400 text-sm bg-[#05070a] reveal"><div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"><div><div class="text-xl font-extrabold text-white mb-2">JAGGA<span class="text-neon"> DIGITAL</span></div><p class="text-xs text-gray-500">&copy; 2026 Jagga Digital.</p></div><div class="flex flex-col sm:flex-row items-center gap-6 text-sm"><a href="mailto:jaggadigitalagency@gmail.com" class="flex items-center gap-2 hover:text-neon"><i class="fa-solid fa-envelope text-neon"></i> jaggadigitalagency@gmail.com</a><a href="https://instagram.com/jagga_digital?vrfl=MWN1aHFod2g5bThtag%3D%3D" target="_blank" class="flex items-center gap-2 hover:text-neon"><i class="fa-brands fa-instagram text-neon"></i> @jagga_digital</a><a href="#" class="wa-link flex items-center gap-2 hover:text-neon"><i class="fa-brands fa-whatsapp text-[#25D366]"></i> +1 (786) 954-7940</a></div><div class="flex gap-6 text-sm"><a href="#portfolio" class="hover:text-neon">Work</a><a href="#services" class="hover:text-neon">Services</a><a href="#pricing" class="hover:text-neon">Pricing</a><a href="#contact" class="hover:text-neon">Contact</a></div></div></footer>
+<a href="#" class="wa-link fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl z-50"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+const waNumber="17869547940";const waMessage=encodeURIComponent("Hi Jagga Digital! I want to start the $50/week package.");const waUrl=`https://wa.me/${waNumber}?text=${waMessage}`;document.querySelectorAll('.wa-link').forEach(l=>{l.href=waUrl;l.target="_blank"});
+const revealEls=document.querySelectorAll('.reveal');const obs=new IntersectionObserver((es,ob)=>{es.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('active'),i*50);ob.unobserve(en.target)}})},{threshold:0.1});revealEls.forEach(el=>obs.observe(el));
+const spot=document.getElementById('spotlight');window.addEventListener('mousemove',e=>{spot.style.left=e.clientX+'px';spot.style.top=e.clientY+'px'});
+});
+</script>
 </body>
 </html>
