@@ -540,8 +540,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const msg = encodeURIComponent(`Hi Jagga Digital! Please send my Free Gym Content Audit.\nName: ${name}\nUS Phone: ${phone}\nEmail: ${email}\nIG: ${ig}`);
         const waUrl = `https://wa.me/17869547940?text=${msg}`;
 
+        // Silent backup before WhatsApp
+        fetch('/api/lead', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({name, phone, email, instagram: ig}),
+          keepalive: true
+        }).catch(() => {});
+
         // Synchronous user-gesture window.open to bypass iOS/Android mobile popup blockers
-        const win = window.open(waUrl, '_blank', 'noopener,noreferrer');
+        const win = window.open(waUrl, '_blank');
         if (!win) {
           window.location.href = waUrl;
         }
